@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: hsl(0, 0%, 98%);
+  --main-color: hsl(48, 89%, 50%);
+  --secundary-color: hsl(240, 9%, 89%);
+  --main-hover-color: hsl(240, 7%, 21%);
+  --secundary-hover-color: hsl(240, 9%, 83%);
+  --text-color: hsl(240, 7%, 21%);
+}
+
+html.forest {
+  --main-color: hsl(145, 63%, 37%);
+  --main-hover-color: hsl(145, 63%, 32%);
+}
+
+html.rain {
+  --main-color: hsl(204, 62%, 47%);
+  --main-hover-color: hsl(204, 62%, 40%);
+}
+
+html.coffeeshop {
+  --main-color: hsl(20, 30%, 40%);
+  --main-hover-color: hsl(20, 30%, 33%);
+}
+
+html.fireplace {
+  --main-color: hsl(28, 80%, 52%);
+  --main-hover-color: hsl(28, 74%, 46%);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Roboto;
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  gap: 20rem;
+  animation: fade-in 1s;
+}
+
+#timer {
+  font-size: 12.6rem;
+  font-weight: 500;
+  user-select: none;
+  margin-bottom: 1.6rem;
+}
+
+#controls {
+  gap: 4rem;
+}
+
+#controls button {
+  background-color: transparent;
+  transition: color 0.3s;
+}
+
+#controls button:hover {
+  color: var(--main-color);
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+#cards button {
+  background-color: var(--secundary-color);
+  padding: 4.4rem 3.7rem;
+  border-radius: 2.4rem;
+  transition: background 0.3s;
+}
+
+#cards button:hover {
+  background-color: var(--secundary-hover-color);
+}
+
+#cards button.selected {
+  background-color: var(--main-color);
+  color: white;
+}
+
+#cards button.selected:hover {
+  background-color: var(--main-hover-color);
+}
+
+/* Generics */
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.column-center {
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-size: 6.4rem;
+  color: var(--text-color);
+  border: 0;
+  cursor: pointer;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
